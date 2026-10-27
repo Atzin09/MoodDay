@@ -1,0 +1,1272 @@
+
+/* ========================================
+   MOODDAY - DISEÑO PRINCIPAL
+   Colores, tarjetas y estilo juvenil
+======================================== */
+
+:root {
+    --morado: #7956d8;
+    --morado-oscuro: #5636ad;
+    --lila: #eee8ff;
+    --rosa: #ffdfeb;
+    --amarillo: #fff0b8;
+    --azul: #dceeff;
+    --verde: #d9f8e8;
+    --fondo: #faf8ff;
+    --texto: #302747;
+    --texto-suave: #777188;
+    --blanco: #ffffff;
+    --borde: #eee9f6;
+    --sombra: 0 12px 35px rgba(76, 52, 130, 0.08);
+}
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--morado);
+    outline-offset: 4px;
+}
+
+::selection {
+    background: var(--lila);
+    color: var(--morado-oscuro);
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    width: 100%;
+    min-height: 78px;
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid var(--borde);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(14px);
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo-icono {
+    font-size: 30px;
+}
+
+.punto {
+    color: #fa78b4;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navegacion a {
+    color: var(--texto-suave);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.navegacion a:hover {
+    color: var(--morado);
+}
+
+/* BIENVENIDA */
+
+.bienvenida {
+    max-width: 1250px;
+    min-height: 510px;
+    margin: 35px auto 65px;
+    padding: 65px 7%;
+    border-radius: 35px;
+    background: linear-gradient(
+        120deg,
+        #eee7ff 0%,
+        #fbe8f3 52%,
+        #fff2d2 100%
+    );
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bienvenida-texto {
+    position: relative;
+    z-index: 2;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: var(--morado);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.bienvenida h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.12;
+    letter-spacing: -2.5px;
+    margin-bottom: 22px;
+}
+
+.bienvenida h1 span {
+    color: var(--morado);
+}
+
+.bienvenida-texto > p:not(.frase) {
+    max-width: 480px;
+    color: #625970;
+    font-size: 16px;
+    margin-bottom: 27px;
+}
+
+.boton-principal {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    padding: 15px 23px;
+    color: var(--blanco);
+    background: linear-gradient(
+        135deg,
+        #8e6ae9,
+        #6d49ca
+    );
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 9px 22px rgba(109, 73, 202, 0.22);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.boton-principal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 13px 25px rgba(109, 73, 202, 0.3);
+}
+
+.boton-principal span {
+    font-size: 21px;
+}
+
+.frase {
+    color: #756b83;
+    font-size: 12px;
+    margin-top: 22px;
+}
+
+/* ILUSTRACIÓN DE BIENVENIDA */
+
+.bienvenida-ilustracion {
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.circulo-fondo {
+    width: 285px;
+    height: 285px;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(
+        145deg,
+        #e5d9ff,
+        #ffcfe3
+    );
+    box-shadow: inset 0 0 0 15px rgba(255,255,255,0.25);
+}
+
+.carita-principal {
+    width: 195px;
+    height: 195px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    background: #fff9df;
+    border: 9px solid rgba(255,255,255,0.8);
+    border-radius: 50%;
+    font-size: 112px;
+    box-shadow: 0 20px 45px rgba(106, 73, 147, 0.15);
+    animation: flotar 4s ease-in-out infinite;
+}
+
+.estrella {
+    position: absolute;
+    color: #9878e8;
+    z-index: 3;
+}
+
+.estrella-uno {
+    top: 35px;
+    left: 14%;
+    font-size: 34px;
+}
+
+.estrella-dos {
+    top: 65px;
+    right: 8%;
+    font-size: 42px;
+}
+
+.estrella-tres {
+    bottom: 45px;
+    right: 17%;
+    font-size: 30px;
+    color: #f3a4c7;
+}
+
+.tarjeta-flotante {
+    position: absolute;
+    bottom: 17px;
+    left: 0;
+    z-index: 4;
+    padding: 13px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.94);
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.mini-corazon {
+    position: absolute;
+    top: 30px;
+    right: 12%;
+    font-size: 36px;
+    z-index: 4;
+    animation: latido 2s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.13);
+    }
+}
+
+/* TÍTULOS DE SECCIÓN */
+
+.seccion-emociones,
+.seccion-historial {
+    max-width: 1150px;
+    margin: 0 auto 85px;
+    padding: 0 25px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo-seccion .etiqueta {
+    margin-bottom: 8px;
+}
+
+.titulo-seccion h2,
+.seccion-recomendacion h2 {
+    font-size: clamp(25px, 3vw, 35px);
+    line-height: 1.25;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+}
+
+.titulo-seccion p {
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+
+/* TARJETAS DE EMOCIONES */
+
+.rejilla-emociones {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-emocion {
+    min-height: 185px;
+    padding: 25px 12px;
+    border: 2px solid transparent;
+    border-radius: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition:
+        transform 0.22s,
+        box-shadow 0.22s,
+        border-color 0.22s;
+}
+
+.tarjeta-emocion:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sombra);
+}
+
+.tarjeta-emocion[aria-pressed="true"] {
+    border-color: var(--morado);
+    box-shadow: 0 0 0 4px rgba(121, 86, 216, 0.12);
+    transform: translateY(-4px);
+}
+
+.emoji {
+    font-size: 49px;
+    line-height: 1.3;
+    transition: transform 0.2s;
+}
+
+.tarjeta-emocion:hover .emoji {
+    transform: scale(1.12) rotate(-5deg);
+}
+
+.nombre-emocion {
+    color: var(--texto);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.descripcion-emocion {
+    color: #746b7e;
+    font-size: 12px;
+}
+
+.emocion-feliz {
+    background: #fff0b8;
+}
+
+.emocion-bien {
+    background: #d9f8e8;
+}
+
+.emocion-neutral {
+    background: #dceeff;
+}
+
+.emocion-triste {
+    background: #e8e0ff;
+}
+
+.emocion-enojado {
+    background: #ffdfdf;
+}
+
+.emocion-cansado {
+    background: #f9e0f3;
+}
+
+.ayuda-emociones {
+    text-align: center;
+    margin-top: 25px;
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+/* RECOMENDACIÓN */
+
+.seccion-recomendacion {
+    max-width: 1050px;
+    margin: 0 auto 85px;
+    padding: 35px 40px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    border: 1px solid #e9ddff;
+    border-radius: 28px;
+    background: linear-gradient(
+        115deg,
+        #eee7ff,
+        #fff0f6
+    );
+}
+
+.recomendacion-icono {
+    width: 85px;
+    height: 85px;
+    min-width: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 23px;
+    font-size: 43px;
+    box-shadow: var(--sombra);
+}
+
+.seccion-recomendacion h2 {
+    font-size: 25px;
+}
+
+.seccion-recomendacion p {
+    color: #685d78;
+    font-size: 14px;
+}
+
+/* HISTORIAL */
+
+.panel-historial {
+    padding: 30px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 25px;
+    box-shadow: var(--sombra);
+}
+
+.historial-resumen {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+/* =====================================
+   MOODDAY: BOTÓN PARA BORRAR ENTRADAS
+===================================== */
+
+.boton-borrar {
+    border: 1px solid #F3B8C4;
+    border-radius: 12px;
+    padding: 9px 13px;
+    background: #FFF0F3;
+    color: #A83252;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.boton-borrar:hover {
+    background: #FFDCE5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(168, 50, 82, 0.12);
+}
+
+.boton-borrar:focus-visible {
+    outline: 3px solid #C084FC;
+    outline-offset: 3px;
+}
+
+.boton-borrar:active {
+    transform: scale(0.97);
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 600px) {
+    .registro-emocion {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .boton-borrar {
+        margin-left: auto;
+    }
+}
+
+.historial-resumen > div {
+    padding: 23px;
+    border-radius: 18px;
+    background: #f3efff;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.historial-resumen > div:nth-child(2) {
+    background: #fff0f6;
+}
+
+.dato-numero {
+    color: var(--morado);
+    font-size: 30px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.dato-etiqueta {
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.historial-vacio {
+    padding: 28px 15px;
+    text-align: center;
+    color: var(--texto-suave);
+    background: #faf9fc;
+    border-radius: 16px;
+    font-size: 14px;
+}
+
+#lista-historial {
+    display: grid;
+    gap: 12px;
+}
+
+.registro-emocion {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px;
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    background: #fff;
+}
+
+.registro-emoji {
+    font-size: 34px;
+}
+
+.registro-detalle {
+    flex: 1;
+    min-width: 0;
+}
+
+.registro-detalle strong {
+    display: block;
+    font-size: 15px;
+}
+
+.registro-detalle small {
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.registro-fecha {
+    color: var(--texto-suave);
+    font-size: 11px;
+    text-align: right;
+}
+
+.estadisticas {
+    margin-top: 30px;
+    padding: 25px;
+    background: #eaf7ff;
+    border-radius: 18px;
+}
+
+.estadisticas h3 {
+    margin-bottom: 8px;
+    font-size: 19px;
+}
+
+.estadisticas p {
+    color: #5e6278;
+    font-size: 13px;
+}
+
+/* RECORDATORIO Y PIE DE PÁGINA */
+
+.recordatorio {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 27px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    background: #fff1c9;
+    border-radius: 22px;
+    text-align: center;
+}
+
+.recordatorio span {
+    font-size: 27px;
+}
+
+.recordatorio p {
+    color: #6b5730;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.pie-pagina {
+    padding: 35px 20px;
+    background: #fff;
+    border-top: 1px solid var(--borde);
+    text-align: center;
+}
+
+.pie-pagina .logo {
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.pie-pagina > p {
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.pie-pagina .nota {
+    max-width: 600px;
+    margin: 10px auto 0;
+    font-size: 11px;
+}
+
+/* DISEÑO PARA TABLETAS Y CELULARES */
+
+@media (max-width: 850px) {
+    .encabezado {
+        padding: 15px 5%;
+    }
+
+    .navegacion {
+        gap: 15px;
+    }
+
+    .bienvenida {
+        margin: 20px 18px 55px;
+        padding: 45px 30px;
+        grid-template-columns: 1fr 0.8fr;
+    }
+
+    .circulo-fondo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .carita-principal {
+        width: 155px;
+        height: 155px;
+        font-size: 85px;
+    }
+
+    .seccion-recomendacion,
+    .recordatorio {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .rejilla-emociones {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 580px) {
+    .encabezado {
+        flex-direction: column;
+        gap: 12px;
+        position: relative;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .navegacion {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+
+    .navegacion a {
+        font-size: 12px;
+    }
+
+    .bienvenida {
+        margin: 18px 12px 50px;
+        padding: 35px 22px 25px;
+        grid-template-columns: 1fr;
+        border-radius: 25px;
+        gap: 10px;
+    }
+
+    .bienvenida h1 {
+        font-size: 43px;
+    }
+
+    .bienvenida-texto > p:not(.frase) {
+        font-size: 14px;
+    }
+
+    .bienvenida-ilustracion {
+        min-height: 280px;
+    }
+
+    .circulo-fondo {
+        width: 225px;
+        height: 225px;
+    }
+
+    .carita-principal {
+        width: 155px;
+        height: 155px;
+        font-size: 85px;
+    }
+
+    .tarjeta-flotante {
+        left: 2%;
+        bottom: 5px;
+    }
+
+    .mini-corazon {
+        right: 5%;
+    }
+
+    .seccion-emociones,
+    .seccion-historial {
+        padding: 0 15px;
+        margin-bottom: 60px;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 27px;
+    }
+
+    .titulo-seccion p {
+        font-size: 13px;
+    }
+
+    .rejilla-emociones {
+        gap: 12px;
+    }
+
+    .tarjeta-emocion {
+        min-height: 155px;
+        padding: 18px 8px;
+        border-radius: 18px;
+    }
+
+    .emoji {
+        font-size: 40px;
+    }
+
+    .nombre-emocion {
+        font-size: 15px;
+    }
+
+    .descripcion-emocion {
+        font-size: 11px;
+    }
+
+    .seccion-recomendacion {
+        margin: 0 12px 60px;
+        padding: 25px 20px;
+        align-items: flex-start;
+        gap: 15px;
+        border-radius: 22px;
+    }
+
+    .recomendacion-icono {
+        width: 55px;
+        height: 55px;
+        min-width: 55px;
+        font-size: 28px;
+        border-radius: 16px;
+    }
+
+    .seccion-recomendacion h2 {
+        font-size: 21px;
+    }
+
+    .seccion-recomendacion p {
+        font-size: 13px;
+    }
+
+    .panel-historial {
+        padding: 17px;
+    }
+
+    .historial-resumen {
+        gap: 10px;
+    }
+
+    .historial-resumen > div {
+        padding: 15px 12px;
+    }
+
+    .dato-numero {
+        font-size: 24px;
+    }
+
+    .registro-emocion {
+        gap: 10px;
+        padding: 12px 9px;
+    }
+
+    .registro-emoji {
+        font-size: 27px;
+    }
+
+    .registro-fecha {
+        font-size: 10px;
+    }
+
+    .estadisticas {
+        padding: 18px;
+    }
+
+    .recordatorio {
+        margin: 0 12px 40px;
+        gap: 10px;
+        padding: 20px 12px;
+    }
+
+    .recordatorio p {
+        font-size: 12px;
+    }
+
+    .recordatorio span {
+        font-size: 22px;
+    }
+}
+
+/* RESPETO A PREFERENCIAS DE MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =====================================
+   MOODDAY: GRÁFICA SEMANAL DE EMOCIONES
+===================================== */
+
+.grafica-semanal {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 22px;
+    width: 100%;
+}
+
+.barra-emocion {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.barra-emocion-etiqueta {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-texto, #37304A);
+}
+
+.barra-emocion-fondo {
+    width: 100%;
+    height: 14px;
+    overflow: hidden;
+    background: #F0ECF7;
+    border-radius: 20px;
+}
+
+.barra-emocion-relleno {
+    height: 100%;
+    min-width: 0;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+  
+/* =====================================
+   MOODDAY: ANIMACIONES Y DETALLES
+===================================== */
+
+/* Movimiento suave de las tarjetas */
+.tarjeta-emocion {
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.tarjeta-emocion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(120, 85, 180, 0.16);
+}
+
+/* Efecto al seleccionar una emoción */
+.tarjeta-emocion[aria-pressed="true"] {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(120, 85, 180, 0.20);
+}
+
+/* Aparición suave de las barras */
+.barra-emocion {
+    animation: aparecerBarra 0.55s ease both;
+}
+
+@keyframes aparecerBarra {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Evitar movimiento si la persona lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+    .tarjeta-emocion,
+    .barra-emocion-relleno,
+    .barra-emocion {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* =====================================
+   MOODDAY: DISEÑO DEL CALENDARIO
+===================================== */
+
+.seccion-calendario {
+    padding: 75px 8%;
+    background: linear-gradient(
+        180deg,
+        #FAF7FF 0%,
+        #F4EEFF 100%
+    );
+}
+
+.panel-calendario {
+    max-width: 760px;
+    margin: 30px auto 0;
+    padding: 28px;
+    background: #FFFFFF;
+    border: 1px solid #E9DDFB;
+    border-radius: 26px;
+    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.10);
+}
+
+.calendario-navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.calendario-navegacion h3 {
+    margin: 0;
+    color: #5B3A91;
+    font-size: 1.35rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.calendario-navegacion button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 14px;
+    background: #F0E7FF;
+    color: #7045B5;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.calendario-navegacion button:hover {
+    background: #E3D2FF;
+    transform: scale(1.06);
+}
+
+.calendario-dias-semana,
+.dias-calendario {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.calendario-dias-semana {
+    margin-bottom: 12px;
+    text-align: center;
+    color: #8A79A8;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.dia-vacio {
+    min-height: 70px;
+}
+
+.dia-calendario {
+    min-width: 0;
+    min-height: 70px;
+    padding: 8px 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid #EEE7F8;
+    border-radius: 16px;
+    background: #FCFAFF;
+    color: #49375F;
+    font: inherit;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.dia-calendario:hover {
+    transform: translateY(-3px);
+    border-color: #B99AEF;
+    background: #F4EDFF;
+}
+
+.numero-dia {
+    font-weight: 700;
+}
+
+.emoji-dia {
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+.dia-con-registro {
+    background: #F3ECFF;
+    border-color: #D9C5FF;
+}
+
+.dia-seleccionado {
+    background: #7C4DCC;
+    border-color: #7C4DCC;
+    color: #FFFFFF;
+    box-shadow: 0 5px 14px rgba(124, 77, 204, 0.25);
+}
+
+.dia-seleccionado:hover {
+    background: #6D3DBB;
+    color: #FFFFFF;
+}
+
+.dia-seleccionado.dia-con-registro {
+    background: #7C4DCC;
+}
+
+.calendario-leyenda {
+    margin: 22px 0;
+    text-align: center;
+    color: #81718F;
+    font-size: 0.9rem;
+}
+
+.detalle-dia {
+    padding: 20px;
+    border-radius: 18px;
+    background: #FAF6FF;
+    border: 1px solid #EDE2FF;
+}
+
+.detalle-dia h3 {
+    margin-top: 0;
+    color: #6840A0;
+}
+
+.detalle-dia p {
+    margin-bottom: 8px;
+    color: #5F526D;
+    line-height: 1.6;
+}
+
+.dia-calendario:focus-visible,
+.calendario-navegacion button:focus-visible {
+    outline: 3px solid #B794F4;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .seccion-calendario {
+        padding: 45px 5%;
+    }
+
+    .panel-calendario {
+        padding: 16px 10px;
+        border-radius: 20px;
+    }
+
+    .calendario-dias-semana,
+    .dias-calendario {
+        gap: 5px;
+    }
+
+    .dia-calendario {
+        min-height: 54px;
+        border-radius: 11px;
+        font-size: 0.85rem;
+    }
+
+    .dia-vacio {
+        min-height: 54px;
+    }
+
+    .emoji-dia {
+        font-size: 1rem;
+    }
+
+    .calendario-navegacion h3 {
+        font-size: 1.05rem;
+    }
+}
+
+/* =====================================
+   MOODDAY: RESUMEN EMOCIONAL MENSUAL
+===================================== */
+
+.resumen-mensual {
+    margin-top: 22px;
+    padding: 22px;
+    background: #FFFFFF;
+    border: 1px solid #E9DDFB;
+    border-radius: 20px;
+}
+
+.resumen-mensual h3 {
+    margin-top: 0;
+    color: #6840A0;
+}
+
+#texto-resumen-mensual {
+    color: #665574;
+    line-height: 1.6;
+}
+
+.grafica-mensual {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.fila-mensual {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.etiqueta-mensual {
+    color: #5F526D;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.fondo-mensual {
+    width: 100%;
+    height: 12px;
+    overflow: hidden;
+    background: #F0EAF8;
+    border-radius: 20px;
+}
+
+.barra-mensual {
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+/* BOTÓN PARA BORRAR TODO EL HISTORIAL */
+
+#boton-borrar-todo {
+    display: block;
+    margin: 24px auto;
+    padding: 12px 22px;
+    border: 1px solid #E8B4C0;
+    border-radius: 14px;
+    background: #FFF0F3;
+    color: #A63D57;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(166, 61, 87, 0.08);
+}
+
+#boton-borrar-todo:hover {
+    background: #F8DCE4;
+    border-color: #D98CA1;
+    box-shadow: 0 6px 16px rgba(166, 61, 87, 0.15);
+    transform: translateY(-2px);
+}
+
+#boton-borrar-todo:active {
+    transform: scale(0.97);
+}
+
+#boton-borrar-todo:focus-visible {
+    outline: 3px solid #C084FC;
+    outline-offset: 3px;
+}
+
+
+

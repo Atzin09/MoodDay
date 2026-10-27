@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="description" content="MoodDay: registra tus emociones y descubre actividades para tu día.">
+
+    <title>MoodDay | Tu día según cómo te sientes</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="encabezado">
+        <a class="logo" href="#" aria-label="MoodDay, inicio">
+            <span class="logo-icono">🌈</span>
+            <span>MoodDay<span class="punto">.</span></span>
+        </a>
+
+        <nav class="navegacion" aria-label="Navegación principal">
+                        <a href="#inicio">Inicio</a>
+            <a href="#emociones">Mis emociones</a>
+            <a href="#calendario">Mi calendario</a>
+            <a href="#historial">Mi historial</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="bienvenida" id="inicio">
+            <div class="bienvenida-texto">
+                <span class="etiqueta">✨ UN MOMENTO PARA TI</span>
+
+                <h1>
+                    ¡Hola!<br>
+                    ¿Cómo te sientes <span>hoy?</span>
+                </h1>
+
+                <p>
+                    Cada día es diferente y todas tus emociones
+                    merecen un espacio. Cuéntanos cómo te sientes
+                    y descubre una pequeña forma de cuidar de ti.
+                </p>
+
+                <a class="boton-principal" href="#emociones">
+                    Registrar mi ánimo <span>→</span>
+                </a>
+
+                <p class="frase">
+                    💜 No tienes que sentirte bien todo el tiempo.
+                </p>
+            </div>
+
+            <div class="bienvenida-ilustracion" aria-hidden="true">
+                <div class="circulo-fondo"></div>
+                <span class="estrella estrella-uno">✦</span>
+                <span class="estrella estrella-dos">✧</span>
+                <span class="estrella estrella-tres">✦</span>
+
+                <div class="tarjeta-flotante">
+                    <span>☁️</span>
+                    <span>Un día a la vez</span>
+                </div>
+
+                <div class="carita-principal">😊</div>
+
+                <div class="mini-corazon">💗</div>
+            </div>
+        </section>
+
+        <section class="seccion-emociones" id="emociones">
+            <div class="titulo-seccion">
+                <span class="etiqueta">TU ESPACIO SEGURO</span>
+                <h2>¿Qué emoción te acompaña?</h2>
+                <p>Elige la opción que más se parezca a cómo te sientes ahora.</p>
+            </div>
+
+            <div class="rejilla-emociones">
+                <button class="tarjeta-emocion emocion-feliz"
+                    type="button" data-emocion="Feliz"
+                    aria-pressed="false">
+                    <span class="emoji">😄</span>
+                    <span class="nombre-emocion">Feliz</span>
+                    <span class="descripcion-emocion">¡Todo brilla!</span>
+                </button>
+
+                <button class="tarjeta-emocion emocion-bien"
+                    type="button" data-emocion="Bien"
+                    aria-pressed="false">
+                    <span class="emoji">😊</span>
+                    <span class="nombre-emocion">Bien</span>
+                    <span class="descripcion-emocion">Voy a mi ritmo</span>
+                </button>
+
+                <button class="tarjeta-emocion emocion-neutral"
+                    type="button" data-emocion="Neutral"
+                    aria-pressed="false">
+                    <span class="emoji">😐</span>
+                    <span class="nombre-emocion">Neutral</span>
+                    <span class="descripcion-emocion">Un día tranquilo</span>
+                </button>
+
+                <button class="tarjeta-emocion emocion-triste"
+                    type="button" data-emocion="Triste"
+                    aria-pressed="false">
+                    <span class="emoji">😔</span>
+                    <span class="nombre-emocion">Triste</span>
+                    <span class="descripcion-emocion">Necesito una pausa</span>
+                </button>
+
+                <button class="tarjeta-emocion emocion-enojado"
+                    type="button" data-emocion="Enojado"
+                    aria-pressed="false">
+                    <span class="emoji">😡</span>
+                    <span class="nombre-emocion">Enojado</span>
+                    <span class="descripcion-emocion">Algo me molestó</span>
+                </button>
+
+                <button class="tarjeta-emocion emocion-cansado"
+                    type="button" data-emocion="Cansado"
+                    aria-pressed="false">
+                    <span class="emoji">😴</span>
+                    <span class="nombre-emocion">Cansado</span>
+                    <span class="descripcion-emocion">Necesito descansar</span>
+                </button>
+            </div>
+
+            <p class="ayuda-emociones">
+                🌷 No hay emociones buenas o malas. Todas nos dicen algo.
+            </p>
+        </section>
+
+        <section class="seccion-recomendacion" id="recomendacion">
+            <div class="recomendacion-icono">💌</div>
+
+            <div>
+                <span class="etiqueta">UN MENSAJE PARA TI</span>
+                <h2>Tu momento de bienestar</h2>
+                <p id="mensaje-recomendacion" aria-live="polite">
+                    Elige una emoción para descubrir una recomendación
+                    pensada para acompañarte hoy.
+                </p>
+            </div>
+        </section>
+
+        <!-- CALENDARIO EMOCIONAL -->
+        <section class="seccion-calendario" id="calendario">
+            <div class="titulo-seccion">
+                <span class="etiqueta">MIS DÍAS, MIS EMOCIONES</span>
+                <h2>Mi calendario emocional</h2>
+                <p>Observa cómo te has sentido a lo largo del mes. 💜</p>
+            </div>
+
+            <div class="panel-calendario">
+                <div class="calendario-navegacion">
+                    <button id="mes-anterior" type="button"
+                        aria-label="Mes anterior">←</button>
+
+                    <h3 id="mes-actual">Mi calendario</h3>
+
+                    <button id="mes-siguiente" type="button"
+                        aria-label="Mes siguiente">→</button>
+                </div>
+
+                <div class="calendario-dias-semana" aria-hidden="true">
+                    <span>Lun</span>
+                    <span>Mar</span>
+                    <span>Mié</span>
+                    <span>Jue</span>
+                    <span>Vie</span>
+                    <span>Sáb</span>
+                    <span>Dom</span>
+                </div>
+
+                <div id="dias-calendario"
+                    class="dias-calendario"
+                    aria-label="Días del mes">
+                </div>
+
+                <p class="calendario-leyenda">
+                    🌷 Selecciona un día para consultar tus registros.
+                </p>
+
+                <div id="detalle-dia" class="detalle-dia" aria-live="polite">
+                    <h3>Tu día especial</h3>
+                    <p>Elige un día del calendario para ver tus emociones.</p>
+                </div>
+
+                <div id="resumen-mensual" class="resumen-mensual">
+                    <h3>✨ Mi resumen del mes</h3>
+                    <p id="texto-resumen-mensual">
+                        Aquí aparecerá un resumen de tus emociones del mes.
+                    </p>
+                    <div id="grafica-mensual" class="grafica-mensual"></div>
+                </div>
+
+            </div>
+        </section>
+        <!-- FIN DEL CALENDARIO EMOCIONAL -->
+
+
+        <section class="seccion-historial" id="historial">
+            <div class="titulo-seccion">
+                <span class="etiqueta">CONOCE TU CAMINO</span>
+                <h2>Mi historial emocional</h2>
+                <p>Cada registro es una oportunidad para conocerte mejor.</p>
+            </div>
+
+            <div class="panel-historial">
+                <div class="historial-resumen">
+                    <div>
+                        <span class="dato-numero" id="total-registros">0</span>
+                        <span class="dato-etiqueta">Registros guardados</span>
+                    </div>
+
+                    <div>
+                        <span class="dato-numero" id="emocion-frecuente">—</span>
+                        <span class="dato-etiqueta">Emoción más frecuente</span>
+                    </div>
+                </div>
+
+                <div id="lista-historial" aria-live="polite">
+                    <p class="historial-vacio">
+                        🌼 Aquí aparecerán tus registros cuando comiences.
+                    </p>
+                </div>
+
+                <div class="acciones-historial">
+                    <button id="boton-borrar-todo" class="boton-borrar-todo" type="button">
+                        🗑️ Borrar todo el historial
+                    </button>
+                </div>
+
+                <div id="estadisticas" class="estadisticas">
+
+                                    <h3>Esta semana</h3>
+                    <p id="resumen-semanal">
+                        Tus estadísticas aparecerán cuando registres tus emociones.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="recordatorio">
+            <span>🌻</span>
+            <p>Ve a tu ritmo. También cuentan los pequeños pasos.</p>
+            <span>💛</span>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <a class="logo" href="#inicio">
+            <span class="logo-icono">🌈</span>
+            <span>MoodDay<span class="punto">.</span></span>
+        </a>
+
+        <p>Hecho con cariño para acompañar tus días. 💜</p>
+        <p class="nota">
+            MoodDay es una herramienta de bienestar y autoconocimiento;
+            no sustituye la atención de un profesional.
+        </p>
+    </footer>
+</body>
+</html>
